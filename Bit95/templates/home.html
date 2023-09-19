@@ -1,0 +1,777 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bit 95</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/w95.css' %}">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141734189-1"></script> <script> window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());    gtag('config', 'UA-141734189-1'); </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+    </head>
+
+    <style>
+        #app1, #app2, #app3, #app4, #app5, #app6, #app7, #app8, #app9, #app10, #app11, #app12, #app13, #app14, #app15, #app16, #app17, #app18, #app19, #app20, #app21, #app22, #app23, #app24, #app25, #app26, #app27, #app28, #app29, #app30, #app31, #app32, #app33, #app34, #app35, #app36, #app37, #app38, #app39, #app40, #app41, #app42, #app43, #app44, #app45, #app46, #app47, #app48, #app49, #app50 {
+            float: left;
+            width: 5%;
+            height: 50px;
+            margin: 1%;
+            padding: 1%;
+            border: 2px;
+        }
+        
+        .btn-center {
+            width: 6%;
+            height: 100%;
+            padding: 2;
+            display: table-cell;
+            vertical-align: middle;
+            line-height: 50%;
+        }
+
+        /* W3 Schools */
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+        /* The actual popup */
+        .popup .popuptext {
+        visibility: hidden;
+        width: 160px;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+        }
+
+        .row {
+            display: flex;
+            margin: 20px;
+            }
+
+        .column-sm{
+            flex: 30%;
+            text-align: left;
+            }
+
+        .column-sm2{
+            flex: 11%;
+            text-align: left;
+            }
+
+        .column-lg{
+            flex: 60%;
+            text-align: left;
+            }
+
+          /* https://stackoverflow.com/questions/4495626/making-custom-right-click-context-menus-for-my-web-app */
+        .custom-menu {
+            display: none;
+            z-index: 1000;
+            position: absolute;
+            overflow: hidden;
+            border: 1px solid #ffffff;
+            white-space: nowrap;
+            font-family: sans-serif;
+            background: #c0c0c0;
+            color: #333;
+            padding: 0;
+        }
+
+        /* Each of the items in the list */
+        .custom-menu li {
+            padding: 8px 12px;
+            cursor: pointer;
+            list-style-type: none;
+            transition: all .3s ease;
+            user-select: none;
+        }
+
+        .custom-menu li:hover {
+            background-color: #010382;
+            color: #ffffff;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 65px;
+            background-color: #c0c0c0;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    
+    <body style="background-color: #008080;" onload="time()">
+        <div id = "app1" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+            <img src="https://i.imgur.com/2uXjd6Q.png" ondblclick="openFiles()" draggable="true" ondragstart="drag(event)" id="drag1" width="92" height="90">
+        </div>
+        <div id = "app6" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+            <img src="https://i.imgur.com/2uXjd6Q.png" ondblclick="openNASA()" draggable="true" ondragstart="drag(event)" id="drag6" width="92" height="90">
+        </div>
+        <div id = "app7" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app8" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app9" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app10" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app11" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app12" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app13" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app14" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app15" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app2" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+            <img src="https://i.imgur.com/joA8cf7.png" ondblclick="openGoogle()" draggable="true" ondragstart="drag(event)" id="drag2" width="82" height="80">
+        </div>
+        <div id = "app16" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app17" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app18" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app19" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app20" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app21" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app22" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app23" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app24" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app25" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app3" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+            <img src="https://i.imgur.com/XIDs4dT.png" ondblclick="openNotepad()" draggable="true" ondragstart="drag(event)" id="drag3" width="75" height="80"></div>
+        <div id = "app26" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app27" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app28" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app29" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app30" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app31" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app32" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app33" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app34" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app35" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>        
+        <div id = "app4" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+            <img src="https://i.imgur.com/I20dyhD.png" ondblclick="openCalculator()" draggable="true" ondragstart="drag(event)" id="drag4" width="84" height="80"></div>
+        <div id = "app36" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app37" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app38" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app39" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app40" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app36" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app37" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app38" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app39" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app40" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app5" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+            <img src="https://i.imgur.com/QUY29ME.png" ondblclick="openRecyclebin()" draggable="true" ondragstart="drag(event)" id="drag5" width="100" height="90"></div>
+        <div id = "app41" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app42" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app43" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app44" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app45" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app46" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app47" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app48" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app49" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        <div id = "app50" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+
+        <div class="footer">
+            <a onclick="openStartbox()" class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary border-dark" style="position: absolute; bottom: 10px; line-height: 50%; left:15px;" role="button">
+                <!--img src="https://daks2k3a4ib2z.cloudfront.net/57b0b52271bead8852aa6781/57b11afbe18710ca164a57b1_Start%20Logo%2032x32.png"-->
+                <h1><b>Start</b></h1>
+            </a>
+            <img style="position: absolute; bottom: 9px; line-height: 50%; left:128px;" src="https://i.imgur.com/hgUbuNz.png" width="15" height="50">
+            <a style="position: absolute; bottom: 9px; line-height: 50%; left:150px;">
+                <img src="https://i.imgur.com/o9ezAB6.png" width="60" height="55">
+            </a>
+            <a style="position: absolute; bottom: 2px; line-height: 50%; left:210px;">
+                <img src="https://i.pinimg.com/originals/28/48/9d/28489d793f8b810fb6e5eeb1c38de3f0.png" ondblclick="openFiles()" width="65" height="65">
+            </a>
+            <img style="position: absolute; bottom: 9px; line-height: 50%; left:280px;" src="https://i.imgur.com/hgUbuNz.png" width="15" height="50">
+            <img style="position: absolute; bottom: 9px; line-height: 50%; right:160px;" src="https://i.imgur.com/hgUbuNz.png" width="15" height="50">
+            <!--a class="btn btn-primary" style="position: absolute; bottom: 8px; line-height: 50%; right:10px; width:80px" role="button">
+                <h2 id="displaytime" style="text-align: right;"></h2>
+            </a-->
+            <div class="card card-tertiary" style="position: absolute; bottom: 10px; line-height: 50%; right:10px; width:140px; height:40px">
+            </div>
+            <h4 id="displaytime" style="position: absolute; bottom: 1px; right:20px;" style="text-align: right;"></h4>
+            <img src="https://daks2k3a4ib2z.cloudfront.net/57b0b52271bead8852aa6781/57dffc3c5056a8537bfa6081_Sound%2032x32.png" style="position: absolute; bottom: 18px; line-height: 50%; right:115px;">
+        </div>
+
+        <div class="popup" id="notepad" style="position: absolute; bottom: 15%; line-height: 50%; right:70%">
+            <span class="popuptext" id="myPopup">
+                <div class="card card-tertiary" style="width: 720px; height: 500px;">
+                    <!--form method="POST" id = "save_notepad_form"> {% csrf_token %} -->
+                        <div class="card-header" id = "notepadheader" id = "notepadheader" style="text-align: left; height: 24px;">
+                            <img src = "https://www.pngkey.com/png/full/142-1426797_download-count-windows-95-icon-png.png" style="position: absolute; left:4px; top: 4px; height:22px; width: 22px;"> 
+                            <h2 style="position: absolute; left:5%; top: 1%;">Notepad</h2>
+                            <img src = "https://i.imgur.com/5jYjVVd.png" onclick="openNotepad()" style="position: absolute; right:4px; top: 4px; height:22px; width:22px;">
+                        </div>
+                        <div class="card-primary" style="text-align: left; height: 24px; color: #c0c0c0">
+                            <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" onclick="openFiles2()" style="position: absolute; top: 46px; line-height: 50%; left:4px; height:16px" role="button">
+                                <h3>Open Files</h3>
+                            </a>
+                            <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" onclick="saveFiles()" style="position: absolute; top: 46px; line-height: 50%; left:120px; height:16px; width: 40px;" role="button">
+                                <h3>Save</h3>
+                            </a>
+                            <!--a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" action="submit" style="position: absolute; top: 46px; line-height: 50%; left: 120px; height:16px" role="button"-->
+                        </div>
+                        <div class="card-body bg-white">
+                            <p class="card-text" style="color: black; height:380px;">
+                                <textarea id="notepad_text" name="notepad_text" style="resize: none; font-size: 22px; border: 0xp; height: 412px; width: 708px; position: absolute; left: 4px; top: 74px"></textarea>
+                            </p>
+                        </div>
+                    <!--/form-->
+                </div>
+            </span>
+        </div>
+
+        <div class="popup" id="google" style="position: absolute; bottom: 15%; line-height: 50%; right:70%">
+            <span class="popuptext" id="myPopup_Google">
+                <div class="card card-tertiary" style="width: 720px; height: 500px;">
+                    <div class="card-header" id = "googleheader" style="text-align: left; height: 24px;">
+                        <img src = "https://freight.cargo.site/t/original/i/218397df167255d4df630d9477eaba0bda8317e95ce444b5b3ba8c5731cc7986/windows-95-icons-png-12.png" style="position: absolute; left:4px; top: 4px; height:25px; width: 25px;"> 
+                        <h2 style="position: absolute; left:5%; top: 1%;">Internet</h2>
+                        <img src = "https://i.imgur.com/5jYjVVd.png" onclick="openGoogle()" style="position: absolute; right:4px; top: 4px; height:22px; width:22px;">
+                    </div>
+                    <div class="card-body bg-white">
+                        <p class="card-text" style="color: black; height:340px">
+                            Hello
+                            <!--embed type="text/html" src="dudu.html" width="500" height="200"-->
+                        </p>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <div class="popup" id="files" style="position: absolute; bottom: 15%; line-height: 50%; right:70%">
+            <span class="popuptext" id="myPopup_Files">
+                <div class="card card-tertiary" style="width: 720px; height: 500px;">
+                    <div class="card-header" id = "filesheader" style="text-align: left; height: 24px;">
+                        <img src = "https://i.pinimg.com/originals/28/48/9d/28489d793f8b810fb6e5eeb1c38de3f0.png" style="position: absolute; left:4px; top: 4px; height:28px; width: 28px;"> 
+                        <h2 style="position: absolute; left:5%; top: 1%;">Files</h2>
+                        <img src = "https://i.imgur.com/5jYjVVd.png" onclick="openFiles()" style="position: absolute; right:4px; top: 4px; height:22px; width:22px;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 714px; height: 30px;">
+                        <div class="card-body bg-lightgray" style="width: 150px; height: 15%;">
+                            <h5 class="card-text" style="color: black; height:10px; text-align: left; position: absolute; left:4px; top: 36px;">
+                                &emsp; Contents of C:/
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card card-tertiary" style="width: 374px; height: 30px; position: absolute; left:3%; top: 16%;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 170px; height: 30px; position: absolute; left:385px; top: 16%;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 150px; height: 30px; position: absolute; left:563px; top: 16%;">
+                    </div>
+                    <h5 class="card-text" style="color: black; text-align: left; position: absolute; left:3%; top: 14%;">
+                        &emsp; Name 
+                    </h5>
+                    <h5 class="card-text" style="color: black; text-align: left; position: absolute; left:400px; top: 65px">
+                        &emsp; Type 
+                    </h5>
+                    <h5 class="card-text" style="color: black; text-align: left; width:200px; position: absolute; left:560px; top: 74px">
+                        &emsp; Date Created 
+                    </h5>
+                    <div class="card-body bg-white" style="height: 400px">
+                        <div id="files_list" style= "width: 700px; height:380px; overflow-y: scroll; position: absolute; left:14px; top: 120px">
+                            {% for file in files%}
+                            <div class="row" id="{{file.1}}" ondblclick="openNotepad_via_Folder('{{file.3}}')">
+                                <div class="column-lg" id="{{file.1}}" style="color: black;">{{file.1}}</div>
+                                <div class="column-sm" id="{{file.1}}" style="color: black">{{file.2}}</div>
+                                <div class="column-sm2" id="{{file.1}}" style="color: black">{{file.4}}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <div class="popup" id="savefiles" style="position: absolute; bottom: 10%; line-height: 50%; right:60%">
+            <span class="popuptext" id="myPopup_saveFiles">
+                <div class="card card-tertiary" style="width: 720px; height: 500px;">
+                    <div class="card-header" id = "savefilesheader" style="text-align: left; height: 24px;">
+                        <img src = "https://i.pinimg.com/originals/28/48/9d/28489d793f8b810fb6e5eeb1c38de3f0.png" style="position: absolute; left:4px; top: 4px; height:28px; width: 28px;"> 
+                        <h2 style="position: absolute; left:5%; top: 1%;">Save</h2>
+                        <img src = "https://i.imgur.com/5jYjVVd.png" onclick="saveFiles()" style="position: absolute; right:4px; top: 4px; height:22px; width:22px;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 714px; height: 30px;">
+                        <div class="card-body bg-lightgray" style="width: 150px; height: 15%;">
+                            <h5 class="card-text" style="color: black; height:10px; text-align: left; position: absolute; left:4px; top: 36px;">
+                                &emsp; Contents of C:/
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card card-tertiary" style="width: 374px; height: 30px; position: absolute; left:3%; top: 16%;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 170px; height: 30px; position: absolute; left:385px; top: 16%;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 150px; height: 30px; position: absolute; left:563px; top: 16%;">
+                    </div>
+                    <h5 class="card-text" style="color: black; text-align: left; position: absolute; left:3%; top: 14%;">
+                        &emsp; Name 
+                    </h5>
+                    <h5 class="card-text" style="color: black; text-align: left; position: absolute; left:400px; top: 65px">
+                        &emsp; Type 
+                    </h5>
+                    <h5 class="card-text" style="color: black; text-align: left; width:200px; position: absolute; left:560px; top: 74px">
+                        &emsp; Date Created 
+                    </h5>
+                    <div class="card-body bg-white" style="height: 295px">
+                        <div style= "width: 700px; height:270px; overflow-y: scroll; position: absolute; left:14px; top: 120px">
+                            {% for file in files%}
+                            <div class="row" id="{{file.0}}" ondblclick="openNotepad_via_Folder('{{file.3}}')">
+                                <div class="column-lg" style="color: black;">{{file.1}}</div>
+                                <div class="column-sm" style="color: black">{{file.2}}</div>
+                                <div class="column-sm2" style="color: black">{{file.4}}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <form method="POST" id = "save_file_form" name="save_file_form"> {% csrf_token %}
+                        <div class="card-body bg-#c0c0c0" style="height: 75px; width:600px">
+                            <div class="form-group has-success d-flex align-items-center justify-content-between">
+                                <h4 style="position: absolute; left:14px; top: 11px; color: black">File name:</h4>
+                                <div class="card card-tertiary" style="position: absolute; top: 54px; left:144px; width:370px; height:30px"></div>
+                                <h4 style="position: absolute; left:14px; top: 45px; color: black">Files of type:</h4>
+                                <h4 style="position: absolute; left:148px; top: 45px; color: black">Text Document</h4>
+                                <div class="card card-tertiary" style="position: absolute; top: 18px; left:144px; width:370px; height:30px">
+                                    <input id="input_file_name" name="input_file_name" type="text" class="form-control is-valid w-75" style="height: 18px; width:355px; font-size: 24px; font-style: 'normal'"/>
+                                </div>
+                            </div>
+                        </div>
+                        <button action="submit" value ="savefile_submit" class="btn btn-primary border-dark" style="position: absolute; bottom: 57px; left: 570px; height: 35px; width: 128px; line-height: 50%;">
+                        </button>
+                        <input type="hidden" name="file_data" value="" id="hidden_file_data">
+                    <h5 style="position: absolute; bottom: 48px; left: 616px; color:black">Save</h5>
+                    </form>
+                    <a onclick="saveFiles()" class="btn btn-primary border-dark" style="position: absolute; bottom: 22px; left: 570px; height: 10px; width: 60px;" role="button">
+                        Cancel
+                    </a>
+                </div>
+            </span>
+        </div>
+
+        <div class="popup" id="calculator" style="position: absolute; bottom: 15%; line-height: 50%; right:70%">
+            <span class="popuptext" id="myPopup_Calculator">
+                <div class="card card-tertiary" style="width: 500px; height: 500px;">
+                    <div class="card-header" id = "calculatorheader" style="text-align: left; height: 24px;">
+                        <img src = "https://64.media.tumblr.com/c8d12905363fffff08c37f8eca363590/2e42f87909d61a4f-81/s540x810/4c69d12663cfa490bdc6f7f07bd8ae881dcc58cf.png" style="position: absolute; left:0px; top: 0px; height:62px; width: 62px;"> 
+                        <h2 style="position: absolute; left:5%; top: 1%;">Calculator</h2>
+                        <img src = "https://i.imgur.com/5jYjVVd.png" onclick="openCalculator()" style="position: absolute; right:4px; top: 4px; height:22px; width:22px;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 460px; height: 55px; position: absolute; left:12%; top: 12%;">
+                        <div class="card-body bg-white" style="width: 440px; height: 30px;">
+                            <h5 class="card-text" style="color: black; height:15px; text-align: left; position: absolute; left:4px; top: 36px;"></h5>
+                        </div>
+                    </div>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 140px; line-height: 50%; left:20px; height:30px; width: 100px" role="button">
+                        <h2 style="color: red">Backspace</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="ce" name="ce" style="position: absolute; top: 140px; line-height: 50%; left:175px; height:30px; width:100px" role="button">
+                        <h2 style="color: red">CE</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="c" name="c" style="position: absolute; top: 140px; line-height: 50%; left:330px; height:30px; width:100px" role="button">
+                        <h2 style="color: red">C</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 185px; left:20px; line-height: 50%; height:50%; width: 38px">
+                        <h2 style="color: blue">7</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 185px; left:112px; line-height: 50%; height:50%; width: 38px">
+                        <h2 style="color: blue">8</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 185px; left:204px; line-height: 50%; height:50%; width: 38px">
+                        <h2 style="color: blue">9</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 185px; left:296px; line-height: 50%; height:50%; width: 38px">
+                        <h2 style="color: red">/</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 185px; left:388px; line-height: 50%; height:50%; width: 40px">
+                        <h2 style="color: blue">sqrt</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 230px; left:20px; line-height: 50%; height:50%; width: 38px">
+                        <h2 style="color: blue">4</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 230px; left:112px; line-height: 50%; height:50%; width: 38px">
+                        <h2 style="color: blue">5</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 230px; left:204px; line-height: 50%; height:50%; width: 38px">
+                        <h2 style="color: blue">6</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 230px; left:296px; line-height: 50%; height:50%; width: 38px">
+                        <h2 style="color: red">*</h2>
+                    </a>
+                    <a class="btn btn-sm mb-2 mb-lg-0 mr-2 btn-primary" id="backspace" value="backspace" style="position: absolute; top: 230px; left:388px; line-height: 50%; height:50%; width: 40px">
+                        <h2 style="color: blue">%</h2>
+                    </a>
+                    
+                    <!-- https://static.wikia.nocookie.net/windows/images/4/49/Windows_95-XP_Calculator.png/revision/latest/scale-to-width-down/260?cb=20120827164153-->
+                </div>
+            </span>
+        </div>
+
+        <div class="popup" id="recyclebin" style="position: absolute; bottom: 15%; line-height: 50%; right:70%">
+            <span class="popuptext" id="myPopup_Recyclebin">
+                <div class="card card-tertiary" style="width: 720px; height: 500px;">
+                    <div class="card-header" id = "filesheader" style="text-align: left; height: 24px;">
+                        <img src = "https://i.pinimg.com/originals/28/48/9d/28489d793f8b810fb6e5eeb1c38de3f0.png" style="position: absolute; left:4px; top: 4px; height:28px; width: 28px;"> 
+                        <h2 style="position: absolute; left:5%; top: 1%;">Recycle Bin</h2>
+                        <img src = "https://i.imgur.com/5jYjVVd.png" onclick="openRecyclebin()" style="position: absolute; right:4px; top: 4px; height:22px; width:22px;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 714px; height: 30px;">
+                        <div class="card-body bg-lightgray" style="width: 90%; height: 15%;">
+                            <h5 class="card-text" style="color: black; height:10px; text-align: left; position: absolute; left:4px; top: 36px; ">
+                                &emsp; Trash
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card card-tertiary" style="width: 374px; height: 30px; position: absolute; left:3%; top: 16%;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 170px; height: 30px; position: absolute; left:385px; top: 16%;">
+                    </div>
+                    <div class="card card-tertiary" style="width: 150px; height: 30px; position: absolute; left:563px; top: 16%;">
+                    </div>
+                    <h5 class="card-text" style="color: black; text-align: left; position: absolute; left:3%; top: 14%;">
+                        &emsp; Name 
+                    </h5>
+                    <h5 class="card-text" style="color: black; text-align: left; position: absolute; left:400px; top: 65px">
+                        &emsp; Type 
+                    </h5>
+                    <h5 class="card-text" style="color: black; text-align: left; width:200px; position: absolute; left:560px; top: 74px">
+                        &emsp; Date Deleted 
+                    </h5>
+                    <div class="card-body bg-white" style="height: 400px">
+                        <div id="deleted_files_list" style= "width: 700px; height:380px; overflow-y: scroll; position: absolute; left:14px; top: 120px">
+                            {% for deleted_file in deleted_files%}
+                            <div class="row" id="{{deleted_file.1}}" ondblclick="openNotepad_via_Folder('{{deleted_file.3}}')">
+                                <div class="column-lg" id="{{deleted_file.1}}" style="color: black;">{{deleted_file.1}}</div>
+                                <div class="column-sm" id="{{deleted_file.1}}" style="color: black">{{deleted_file.2}}</div>
+                                <div class="column-sm2" id="{{deleted_file.1}}" style="color: black">{{deleted_file.5}}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <div class="popup" id="nasa" style="position: absolute; bottom: 15%; line-height: 50%; right:70%">
+            <span class="popuptext" id="myPopup_NASA">
+                <div class="card card-tertiary" style="width: 720px; height: 500px;">
+                    <div class="card-header" id = "nasaheader" style="text-align: left; height: 24px;">
+                        <img src = "https://freight.cargo.site/t/original/i/218397df167255d4df630d9477eaba0bda8317e95ce444b5b3ba8c5731cc7986/windows-95-icons-png-12.png" style="position: absolute; left:4px; top: 4px; height:25px; width: 25px;"> 
+                        <h2 style="position: absolute; left:5%; top: 1%;">NASA</h2>
+                        <img src = "https://i.imgur.com/5jYjVVd.png" onclick="openNASA()" style="position: absolute; right:4px; top: 4px; height:22px; width:22px;">
+                    </div>
+                    <div id="image_explanation_text" class="card-body bg-#c0c0c0" style="height: 88%">
+                        <div style= "height: 98%; overflow-y: scroll;">
+                            <h3 style="color:black">{{image_title}}</h3>
+                            <img id="{{image_url}}" src="{{image_url}}" style="height:55%; width:38%;">
+                            <p></p>
+                            <p style="color:black">{{image_explanation}}</p>
+                            <h5 style="color:white; text-align: right; position: relative; right:2%">{{image_date}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <div class="popup" id="start_box" ondblclick="openStartbox()" style="position: absolute; bottom: 58px; line-height: 50%; left:80px">
+            <span class="popuptext" id="myPopup_Startbox">
+                <div class="card card-tertiary" style="width: 250px; height: 320px;">
+                </div>
+            </span>
+        </div>
+
+        <ul class='custom-menu'>
+        <form method="POST" id = "delete_file_form" name="delete_file_form"> {% csrf_token %}
+            <li onclick="delete_submit()" data-action="first">Delete</li>
+            <input type="hidden" name="hidden_file_name" value="" id="hidden_file_name">
+        </form>
+        <form method="POST" id = "restore_file_form" name="restore_file_form"> {% csrf_token %}
+            <li onclick="restore_submit()" data-action="second">Restore</li>
+            <input type="hidden" name="hidden_file_name2" value="" id="hidden_file_name2">
+        </form>
+        <li onclick="openNotepad()" data-action="third">New Document</li>
+        <form method="POST" id = "download_image_form" name="download_image_form"> {% csrf_token %}
+            <li onclick="download_submit()" data-action="fourth">Download</li>
+            <input type="hidden" name="hidden_image_name" value="" id="hidden_image_name">
+        </form>
+        </ul>
+    </body>
+
+    <script>
+        function allowDrop(ev){
+            ev.preventDefault();
+        }
+
+        function drag(ev){
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev, target){
+            let div = document.getElementById(target.id);
+            // Add more Apps
+            if (!div.hasChildNodes() || (target.id == "app1" && ev.dataTransfer.getData("text")=="drag1") || 
+                (target.id == "app2" && ev.dataTransfer.getData("text")=="drag2") || 
+                (target.id == "app3" && ev.dataTransfer.getData("text")=="drag3") || 
+                (target.id == "app4" && ev.dataTransfer.getData("text")=="drag4") || 
+                (target.id == "app5" && ev.dataTransfer.getData("text")=="drag5") || 
+                (target.id == "app6" && ev.dataTransfer.getData("text")=="drag6"))
+            {
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+                ev.preventDefault();
+            }
+        }
+
+        function openFiles(){
+            var popup = document.getElementById("myPopup_Files");
+            popup.classList.toggle("show");
+        }
+
+        function openNotepad(){
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+            var notes = document.getElementById("notepad_text");
+            notes.innerHTML = "";
+        }
+
+        function openFiles2(){
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+            var popup = document.getElementById("myPopup_Files");
+            popup.classList.toggle("show");
+        }
+
+        function saveFiles(){
+            var popup = document.getElementById("myPopup_saveFiles");
+            var notepad_text = document.getElementById("notepad_text").value;
+            $('#hidden_file_data').val(notepad_text)
+            popup.classList.toggle("show");
+        }
+
+        function openGoogle(){
+            var popup = document.getElementById("myPopup_Google");
+            popup.classList.toggle("show");
+        }
+
+        function openRecyclebin(){
+            var popup = document.getElementById("myPopup_Recyclebin");
+            popup.classList.toggle("show");
+        }
+
+        function openNASA(){
+            var popup = document.getElementById("myPopup_NASA");
+            popup.classList.toggle("show");
+        }
+
+        function openCalculator(){
+            var popup = document.getElementById("myPopup_Calculator");
+            popup.classList.toggle("show");
+        }
+
+        function time(){
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let d = today.getDate();
+            m = checkTime(h, m);
+            document.getElementById('displaytime').innerHTML = m;
+            setTimeout(time, 1000);
+        }
+
+        function openNotepad_via_Folder(file_data){
+            var popup = document.getElementById("myPopup");
+            var notes = document.getElementById("notepad_text");
+            popup.classList.toggle("show");
+            notes.innerHTML = file_data;
+        }
+
+        function delete_submit(){
+            document.delete_file_form.submit();
+        }
+
+        function restore_submit(){
+            document.restore_file_form.submit();
+        }
+
+        function download_submit(){
+            document.download_image_form.submit();
+        }
+        /*
+        function openNotepad_via_RightClick(){
+            var file_name = document.getElementById("hidden_file_name");
+            var notes = document.getElementById("notepad_text");
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+            notes.innerHTML = file_name.value;
+        } */
+
+        function openStartbox(file_data){
+            var popup = document.getElementById("myPopup_Startbox");
+            popup.classList.toggle("show");
+        }
+
+        function checkTime(j, i){
+            if (i<10) {
+                i = "0" + i;
+            }
+            if (j == 12){
+                i = j + ":" + i + " PM";
+            }
+            else if (j == 0){
+                i = "12:" + i + " AM";
+            }
+            else if (j>12) {
+                j = j - 12;
+                i = j + ":" + i + " PM";
+            } else {
+                i = j + ":" + i + " AM";
+            }
+            return i;
+        }
+
+        dragElement(document.getElementById("notepad"));
+        dragElement(document.getElementById("google"));
+        dragElement(document.getElementById("files"));
+        dragElement(document.getElementById("savefiles"));
+        dragElement(document.getElementById("calculator"));
+        dragElement(document.getElementById("savefiles"));
+        dragElement(document.getElementById("recyclebin"));
+        dragElement(document.getElementById("nasa"));
+
+
+        function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+        function reload(){
+            location.reload();
+        }
+
+        /*
+        function highlight(id){
+            document.getElementById(id).style.backgroundColor = 'blue';
+        } */
+
+        /* here: https://stackoverflow.com/questions/4495626/making-custom-right-click-context-menus-for-my-web-app*/
+        $(document).bind("contextmenu", function (event) {
+    
+        // Avoid the real one
+        event.preventDefault();
+        
+        // Show contextmenu
+        $(".custom-menu").finish().toggle(100).
+        
+        // In the right position (the mouse)
+        css({
+            top: event.pageY + "px",
+            left: event.pageX + "px"
+        });
+        
+    });
+
+
+    // If the document is clicked somewhere
+    $(document).bind("mousedown", function (e) {
+        
+        // If the clicked element is not the menu
+        if (!$(e.target).parents(".custom-menu").length > 0) {
+            
+            // Hide it
+            $(".custom-menu").hide(100);
+        }
+    });
+
+
+    // If the menu element is clicked
+    $(".custom-menu li").click(function(){
+        
+        // This is the triggered action name
+        switch($(this).attr("data-action")) {
+            
+            /* A case for each action. Your actions here
+            case "first": alert("first"); break;
+            case "second": alert("second"); break;
+            case "third": alert("third"); break;
+            */
+        }
+    
+        // Hide it AFTER the action was triggered
+        $(".custom-menu").hide(100);
+            });
+        
+        /* here: https://stackoverflow.com/questions/18453480/get-the-row-id-of-html-table-after-right-click */
+        $('#files_list div').mousedown(function(e){
+            if(e.button==2) {
+                var file_name = $(this).attr('id');
+                $('#hidden_file_name').val(file_name);
+            }
+        });
+        
+        $('#deleted_files_list div').mousedown(function(e){
+            if(e.button==2) {
+                var file_name = $(this).attr('id');
+                $('#hidden_file_name2').val(file_name);
+            }
+        });
+
+        $('#image_explanation_text div').mousedown(function(e){
+            if(e.button==2) {
+                var image_name = $(this).attr('id');
+                $('#hidden_image_name').val(image_name);
+            }
+        });
+
+    </script>
+</html>
